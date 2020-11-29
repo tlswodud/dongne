@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/adress"
+        android:title="주소->"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/item1"
+        android:title="메뉴1" >
+        <menu >
+            <item
+                android:id="@+id/item1_1"
+                android:title="서브메뉴1" />
+            <item
+                android:id="@+id/item1_2"
+                android:title="서브메뉴1" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/item2"
+        android:title="메뉴2" >
+        <menu >
+            <item
+                android:id="@+id/item2-1"
+                android:title="서브메뉴2" />
+            <item
+                android:id="@+id/item2_2"
+                android:title="서브메뉴2" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/item3"
+        android:title="메뉴3" >
+        <menu >
+            <item android:title="Item" />
+            <item android:title="Item" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/item4"
+        android:title="메뉴4" >
+        <menu >
+            <item android:title="Item" />
+            <item android:title="Item" />
+        </menu>
+    </item>
+</menu>
