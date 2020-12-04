@@ -2,16 +2,20 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+
+
     <item
         android:id="@+id/adress"
         android:title="주소->"
         app:showAsAction="always" />
     <item
         android:id="@+id/item1"
-        android:title="메뉴1" >
-        <menu >
+        android:onClick="on"
+        android:title="메뉴1">
+        <menu>
             <item
                 android:id="@+id/item1_1"
+                android:onClick="@string/title_activity_menu1"
                 android:title="서브메뉴1" />
             <item
                 android:id="@+id/item1_2"
@@ -23,7 +27,7 @@
         android:title="메뉴2" >
         <menu >
             <item
-                android:id="@+id/item2-1"
+                android:id="@+id/item2_1"
                 android:title="서브메뉴2" />
             <item
                 android:id="@+id/item2_2"
@@ -47,3 +51,8 @@
         </menu>
     </item>
 </menu>
+
+
+
+
+

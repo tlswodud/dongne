@@ -7,34 +7,30 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <FrameLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/frameSize">
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpager"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/frameSize" />
+
+        <me.relex.circleindicator.CircleIndicator3
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="bottom"/>
+
+    </FrameLayout>
+
     <TextView
-        android:id="@+id/textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:text="TextView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-    <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/text"
         android:layout_width="match_parent"
-        android:layout_height="227dp"
-        app:srcCompat="@drawable/ic_banner_foreground"
-        android:contentDescription="TODO" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="showCameraBtn"
-        android:text="Button"
-        android:visibility="visible" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="207dp"
-        android:layout_weight="0"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        android:layout_height="199dp"
+        android:gravity="center"
+        android:text="뷰어 밑에 위치" />
 
 </LinearLayout>
