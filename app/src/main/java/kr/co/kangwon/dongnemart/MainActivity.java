@@ -2,6 +2,8 @@ package kr.co.kangwon.dongnemart;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.core.view.ViewCompat;
@@ -22,6 +24,22 @@ public class MainActivity extends FragmentActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
+
+            final String[] ListMenu = {"리스트1","리스트2","리스트3","리스트4"};
+            ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,ListMenu);
+            ListView listView = (ListView)findViewById(R.id.list);
+            listView.setAdapter(adapter);
+            registerForContextMenu(listView);
+
+            final String[] ListMenu2 = {"리스트1","리스트2","리스트3","리스트4"};
+            ArrayAdapter adapter2 = new ArrayAdapter(this, android.R.layout.simple_list_item_1,ListMenu2);
+            ListView listView2 = (ListView)findViewById(R.id.list2);
+            listView2.setAdapter(adapter2);
+
+            final String[] ListMenu3 = {"리스트1","리스트2","리스트3","리스트4"};
+            ArrayAdapter adapter3 = new ArrayAdapter(this, android.R.layout.simple_list_item_1,ListMenu3);
+            ListView listView3 = (ListView)findViewById(R.id.list3);
+            listView3.setAdapter(adapter3);
 
 
 
@@ -78,7 +96,10 @@ public class MainActivity extends FragmentActivity {
 
             });
 
+
+
         }
+
 
     }
 
