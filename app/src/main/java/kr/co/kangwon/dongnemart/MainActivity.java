@@ -1,8 +1,14 @@
 package kr.co.kangwon.dongnemart;
 
+import android.app.Dialog;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -19,6 +25,7 @@ public class MainActivity extends FragmentActivity {
         private FragmentStateAdapter pagerAdapter;
         private int num_page = 4;
         private CircleIndicator3 mIndicator;
+        ImageView imageView1;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +33,45 @@ public class MainActivity extends FragmentActivity {
             setContentView(R.layout.activity_main);
 
             final String[] ListMenu = {"리스트1","리스트2","리스트3","리스트4"};
-            ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,ListMenu);
-            ListView listView = (ListView)findViewById(R.id.list);
-            listView.setAdapter(adapter);
-            registerForContextMenu(listView);
+            final Integer[] item = {R.drawable.manman, R.drawable.ic_banner_foreground, R.drawable.ic_launcher_background,
+                    R.drawable.ic_banner_foreground};
 
-            final String[] ListMenu2 = {"리스트1","리스트2","리스트3","리스트4"};
+
+
+            //ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,ListMenu);
+           // ListView listView = (ListView)findViewById(R.id.list);
+
+            setTitle("ListView Example");
+            ListView mylistview = (ListView)findViewById(R.id.list);
+            registerForContextMenu(mylistview);
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, ListMenu);
+            mylistview.setAdapter(adapter);
+
+            mylistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    final Dialog imgdialog = new Dialog(MainActivity.this);
+                    imgdialog.setContentView(R.layout.dialog);
+
+                    Button btn = (Button)imgdialog.findViewById(R.id.button);
+                    final ImageView imageView = (ImageView)imgdialog.findViewById(R.id.imageView1);
+                    Bitmap b = BitmapFactory.decodeResource(getResources(), item[i]);
+                    imageView.setImageBitmap(b);
+
+                    btn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            imgdialog.dismiss();
+                        }
+                    });
+                    imgdialog.show();
+                }
+            });
+
+
+
+final String[] ListMenu2 = {"리스트1","리스트2","리스트3","리스트4"};
             ArrayAdapter adapter2 = new ArrayAdapter(this, android.R.layout.simple_list_item_1,ListMenu2);
             ListView listView2 = (ListView)findViewById(R.id.list2);
             listView2.setAdapter(adapter2);
@@ -40,6 +80,8 @@ public class MainActivity extends FragmentActivity {
             ArrayAdapter adapter3 = new ArrayAdapter(this, android.R.layout.simple_list_item_1,ListMenu3);
             ListView listView3 = (ListView)findViewById(R.id.list3);
             listView3.setAdapter(adapter3);
+
+
 
 
 
@@ -99,6 +141,10 @@ public class MainActivity extends FragmentActivity {
 
 
         }
+
+
+
+
 
 
     }
