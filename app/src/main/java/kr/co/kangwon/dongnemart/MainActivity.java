@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,6 +18,10 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
+
 import me.relex.circleindicator.CircleIndicator3;
 
 public class MainActivity extends FragmentActivity {
@@ -27,10 +32,13 @@ public class MainActivity extends FragmentActivity {
         private CircleIndicator3 mIndicator;
         ImageView imageView1;
 
+
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
+            getToken();
+            
 
             final String[] ListMenu = {"리스트1","리스트2","리스트3","리스트4"};
             final Integer[] item = {R.drawable.manman, R.drawable.ic_banner_foreground, R.drawable.ic_launcher_background,
@@ -140,7 +148,33 @@ final String[] ListMenu2 = {"리스트1","리스트2","리스트3","리스트4"}
 
 
 
+
+
+
+
+
         }
+
+
+           public  void getToken(){
+               FirebaseMessaging.getInstance().getToken()
+                       .addOnCompleteListener(new OnCompleteListener<String>() {
+                           @Override
+                           public void onComplete(@NonNull Task<String> task) {
+                               if (!task.isSuccessful()) {
+                                   Log.d("test123", "Fetching FCM registration token failed");
+                                   return;
+                               }
+
+                               // Get new FCM registration token
+                               String token = task.getResult();
+                               Log.d("test123" ,"token: "+token);
+                               // Log and toast
+
+                           }
+                       });
+           }
+
 
 
 

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "68634114948",
+    "project_id": "dongnemartfcm",
+    "storage_bucket": "dongnemartfcm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:68634114948:android:32e9a91d94f8a111c67bd1",
+        "android_client_info": {
+          "package_name": "kr.co.kangwon.dongnemart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "68634114948-tjkit2k745eh43pqggr8ahdv9otugc1t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiNiTkbFI5NHgduTSXrxw0C9jbjXHUv_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "68634114948-tjkit2k745eh43pqggr8ahdv9otugc1t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
