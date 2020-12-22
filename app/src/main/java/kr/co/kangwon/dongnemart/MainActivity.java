@@ -1,14 +1,17 @@
 package kr.co.kangwon.dongnemart;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -38,7 +41,17 @@ public class MainActivity extends FragmentActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
             getToken();
-            
+
+            ImageButton imageButton1 =(ImageButton)findViewById(R.id.imageButton);
+            imageButton1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.kangwon.ac.kr/www/index.do"));
+                    startActivity(intent);
+
+
+                }
+            });
 
             final String[] ListMenu = {"리스트1","리스트2","리스트3","리스트4"};
             final Integer[] item = {R.drawable.manman, R.drawable.ic_banner_foreground, R.drawable.ic_launcher_background,
