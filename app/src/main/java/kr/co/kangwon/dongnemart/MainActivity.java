@@ -54,7 +54,7 @@ public class MainActivity extends FragmentActivity {
             });
 
             final String[] ListMenu = {"리스트1","리스트2","리스트3","리스트4"};
-            final Integer[] item = {R.drawable.manman, R.drawable.ic_banner_foreground, R.drawable.ic_launcher_background,
+            final Integer[] item = {R.drawable.manman, R.drawable.appp, R.drawable.ic_launcher_background,
                     R.drawable.ic_banner_foreground};
 
 
@@ -106,16 +106,16 @@ final String[] ListMenu2 = {"리스트1","리스트2","리스트3","리스트4"}
 
 
 
-            //ViewPager2
+
             mPager = findViewById(R.id.viewpager);
-            //Adapter
+
             pagerAdapter = new MyAdapter(this, num_page);
             mPager.setAdapter(pagerAdapter);
-            //Indicator
+
             mIndicator = findViewById(R.id.indicator);
             mIndicator.setViewPager(mPager);
             mIndicator.createIndicators(num_page,0);
-            //ViewPager Setting
+
             mPager.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
             mPager.setCurrentItem(1000);
             mPager.setOffscreenPageLimit(3);
